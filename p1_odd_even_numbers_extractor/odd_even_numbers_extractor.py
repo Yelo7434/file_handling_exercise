@@ -15,4 +15,11 @@ class EvenOddNumbersExtractor:
         with open(filenamer, "w") as file:
             file.write(str(content) + "\n")
 
-            
+    def categorize(self):
+        data = self.read_file()
+        for number in data:
+            if number % 2 == 0:
+                self.write_file("even_numbers.txt", number)
+            else:
+                self.write_file("odd_numbers.txt", number)
+        
