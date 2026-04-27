@@ -15,4 +15,6 @@ class TwoFileIntegers:
         with open(filename, "a") as file:
             file.write(f"{str(content)}\n")
 
+    def process_files(self, data: list) -> list[int]:
+        return [int(line.rstrip("\n")) for line in data]
     
