@@ -1,8 +1,8 @@
 class TwoFileIntegers:
-    def __init__(self, filename: srt = "numbers.txt"):
-        self.filename - filename
+    def __init__(self, filename: str = "numbers.txt"):
+        self.filename = filename
         self.odd_filename = "triple.txt"
-        self.even_filename = "doubpe.txt"
+        self.even_filename = "double.txt"
 
     def read_file(self):
         try:
