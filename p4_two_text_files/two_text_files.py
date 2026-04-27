@@ -27,4 +27,7 @@ class TwoFileIntegers:
                 self.write_file(self.even_filename, number ** 2)
             else:
                 self.write_file(self.odd_filename, number ** 3)
-                
+
+if __name__ == "__main__":
+        process = TwoFileIntegers()
+        process.process_integers()
