@@ -5,13 +5,16 @@ class OddEvenNumbersExtractor:
     def read_file(self) -> list[int]:
         try:
             with open(self.filename, "r") as file:
-                numbers = [int(number.strip()) for number in file.readlines()]
-            return numbers
-        except:
+                return [int(number.strip()) for number in file.readlines()]
+        except ValueError:
             print("File must only contain integers")
+            return []
+        except FileNotFoundError:
+            print("File not found")
+            return []
 
     def write_file(self, filename: str, content: int):
-        with open(filename, 'a') as file:
+        with open(filename, "w") as file:
             file.write(str(content) + "\n")
 
     def categorize(self):
