@@ -14,7 +14,7 @@ class OddEvenNumbersExtractor:
             return []
 
     def write_file(self, filename: str, content: int):
-        with open(filename, "w") as file:
+        with open(filename, 'a') as file:
             file.write(str(content) + "\n")
 
     def categorize(self):
