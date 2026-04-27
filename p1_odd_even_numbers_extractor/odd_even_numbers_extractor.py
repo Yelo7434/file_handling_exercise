@@ -7,7 +7,6 @@ class OddEvenNumbersExtractor:
             with open(self.filename, "r") as file:
                 numbers = [int(number.strip()) for number in file.readlines()]
             return numbers
-
         except:
             print("File must only contain integers")
 
@@ -16,13 +15,13 @@ class OddEvenNumbersExtractor:
             file.write(str(content) + "\n")
 
     def categorize(self):
-            data = self.read_file()
-            for number in data:
-                if number % 2 == 0:
-                    self.write_file("even_numbers.txt", number)
-                else:
-                    self.write_file("odd_numbers.txt", number)
-    
+        data = self.read_file()
+        for number in data:
+            if number % 2 == 0:
+                self.write_file("even_numbers.txt", number)
+            else:
+                self.write_file("odd_numbers.txt", number)
+
 if __name__ == "__main__":
     extractor = OddEvenNumbersExtractor()
     extractor.categorize()
