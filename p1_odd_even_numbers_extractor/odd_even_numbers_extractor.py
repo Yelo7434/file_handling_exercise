@@ -1,25 +1,28 @@
-class EvenOddNumbersExtractor:
-    def _init_(self, filename: str = "./numbers.txt"):
-        self.flame = filename
+class OddEvenNumbersExtractor:
+    def __init__(self, filename: str = "./numbers.txt"):
+        self.filename = filename
 
     def read_file(self) -> list[int]:
         try:
-            with open(self.flame, "r") as file:
-                numbers = [init(number.rstrip("\n")) for number in file.readlines()]
-                return numbers
-            
+            with open(self.filename, "r") as file:
+                numbers = [int(number.strip()) for number in file.readlines()]
+            return numbers
+
         except:
             print("File must only contain integers")
 
     def write_file(self, filename: str, content: int):
-        with open(filenamer, "w") as file:
+        with open(filename, 'a') as file:
             file.write(str(content) + "\n")
 
     def categorize(self):
-        data = self.read_file()
-        for number in data:
-            if number % 2 == 0:
-                self.write_file("even_numbers.txt", number)
-            else:
-                self.write_file("odd_numbers.txt", number)
-        
+            data = self.read_file()
+            for number in data:
+                if number % 2 == 0:
+                    self.write_file("even_numbers.txt", number)
+                else:
+                    self.write_file("odd_numbers.txt", number)
+    
+if __name__ == "__main__":
+    extractor = OddEvenNumbersExtractor()
+    extractor.categorize()
