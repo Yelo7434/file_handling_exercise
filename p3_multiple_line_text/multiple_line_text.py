@@ -12,3 +12,9 @@ class MultipleLineText:
                     
                     if more != 'y':
                         break
+        
+        except:
+            print("An error occurred while writing to the file.")
+
+if __name__ == "__main__":
+    MultipleLineText().multiple_line_text()
